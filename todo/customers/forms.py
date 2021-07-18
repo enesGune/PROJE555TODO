@@ -3,18 +3,47 @@ from .models import Customer
 
 
 class CustomerForms(forms.ModelForm):
-    tc_no = forms.CharField(label='', widget=forms.TextInput(
-        attrs={'placeholder': 'TC NUMARASI'}))
-    name = forms.CharField(label='', widget=forms.TextInput(
-        attrs={'placeholder': 'AD'}))
+    tc_no = forms.CharField(
+        label='',
+        widget=forms.TextInput(
+            attrs={'placeholder': 'TC NUMARASI'}
+        )
+    )
+
+    name = forms.CharField(
+        label='',
+        widget=forms.TextInput(
+            attrs={'placeholder': 'AD'}
+        )
+    )
+
     surname = forms.CharField(
-        label='', widget=forms.TextInput(attrs={'placeholder': 'SOYAD'}))
+        label='',
+        widget=forms.TextInput(
+            attrs={'placeholder': 'SOYAD'}
+        )
+    )
+
     phone_number = forms.CharField(
-        label='', widget=forms.TextInput(attrs={'placeholder': 'TELEFON NO'}))
+        label='',
+        widget=forms.TextInput(
+            attrs={'placeholder': 'TELEFON NO'}
+        )
+    )
+
     city = forms.CharField(
-        label='', widget=forms.TextInput(attrs={'placeholder': 'İL'}))
-    town = forms.CharField(label='', widget=forms.TextInput(
-        attrs={'placeholder': 'İLÇE'}))
+        label='',
+        widget=forms.TextInput(
+            attrs={'placeholder': 'İL'}
+        )
+    )
+
+    town = forms.CharField(
+        label='',
+        widget=forms.TextInput(
+            attrs={'placeholder': 'İLÇE'}
+        )
+    )
 
     class Meta:
         model = Customer
