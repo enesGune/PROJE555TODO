@@ -1,5 +1,5 @@
 from django import forms
-from .models import LoginPage
+from .models import LoginUser
 
 
 class LoginForms(forms.ModelForm):
@@ -9,7 +9,7 @@ class LoginForms(forms.ModelForm):
         attrs={'placeholder': 'Şifre'}))
 
     class Meta:
-        model = LoginPage
+        model = LoginUser
         fields = [
             'username',
             'password',

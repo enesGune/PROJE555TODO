@@ -15,11 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from pages.views import login_page
+from users.views import login_user
 from customers.views import customer_creat_view, customer_list_view, customer_delete_view, customer_update_view
 
 urlpatterns = [
-    path('', login_page, name='login'),
+    path('', login_user, name='login'),
     path('dasboard/', customer_list_view, name='customer_view_dasboard'),
     path('create/', customer_creat_view, name='customer_view_create'),
     path('<int:id>/delete/', customer_delete_view, name='customer_view_delete'),
