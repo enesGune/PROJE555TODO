@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container justify-content-center" style="width: 20rem; margin-top: 200px;">
+        <div class="card-body bg-white">
+            <form action="." method="POST" > {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="Save"/>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -5,20 +5,36 @@
         <thead>
             <tr>
                 <th scope="col">id</th>
+                <th scope="col">Tc</th>
                 <th scope="col">Ad</th>
                 <th scope="col">SoyAD</th>
                 <th scope="col">TelefonNo</th>
                 <th scope="col">İl</th>
                 <th scope="col">İlçe</th>
+                <th scope="col">İşlem
+                    <button type="button" class="btn btn-secondary" style="margin-left: 50px;">New</button>
+                </th>
+                
             </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
+        </thead>
+        <tbody>
+            {% for cs in list %}
+                <tr>
+                    <th scope="row">{{cs.id}}</th>
+                    <td>{{cs.tc_no}}</td>
+                    <td>{{cs.name}}</td>
+                    <td>{{cs.surname}}</td>
+                    <td>{{cs.phone_number}}</td>
+                    <td>{{cs.city}}</td>
+                    <td>{{cs.town}}</td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                            <button type="button" class="btn btn-secondary" onclick="deleteFunction({{cs.id}})">Delete</button>
+                            <button type="button" class="btn btn-secondary">Update</button>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}            
         </tbody>
     </table>
 {% include 'pagination.html' %}
