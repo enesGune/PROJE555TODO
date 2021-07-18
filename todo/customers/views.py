@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 
 # Create your views here.
 
@@ -25,3 +25,14 @@ def customer_list_view(request):
         'list': queryset,
     }
     return render(request, 'dasboard.html', context)
+
+
+def customer_delete_view(request, id):
+    obj = get_object_or_404(Customer, id=id)
+    if request.method == "POST":
+        obj.delete()
+        return redirect('../../')
+    context = {
+        "object": obj
+    }
+    return render(request, "base.html", context)
