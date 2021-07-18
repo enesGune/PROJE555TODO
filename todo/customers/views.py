@@ -31,8 +31,18 @@ def customer_delete_view(request, id):
     obj = get_object_or_404(Customer, id=id)
     if request.method == "POST":
         obj.delete()
-        return redirect('../../')
     context = {
         "object": obj
     }
-    return render(request, "base.html", context)
+    return render(request, "delete.html", context)
+
+
+def customer_update_view(request, id=id):
+    obj = get_object_or_404(Customer, id=id)
+    form = CustomerForms(request.POST or None, instance=obj)
+    if form.is_valid():
+        form.save()
+    context = {
+        'form': form
+    }
+    return render(request, "new_item.html", context)

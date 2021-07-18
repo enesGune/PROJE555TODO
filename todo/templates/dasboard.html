@@ -12,7 +12,8 @@
                 <th scope="col">İl</th>
                 <th scope="col">İlçe</th>
                 <th scope="col">İşlem
-                    <button type="button" class="btn btn-secondary" style="margin-left: 50px;">New</button>
+                    <!-- <button type="button" class="btn btn-secondary" style="margin-left: 50px;" herf = " {% url 'customer_view_create' %}">New</button> -->
+                    <a href="{% url 'customer_view_create' %}" class="btn btn-info" >NEW</a>
                 </th>
                 
             </tr>
@@ -29,8 +30,10 @@
                     <td>{{cs.town}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example" >
-                            <button type="button" class="btn btn-secondary" onclick="deleteFunction({{cs.id}})">Delete</button>
-                            <button type="button" class="btn btn-secondary">Update</button>
+                            <!-- <button type="button" class="btn btn-secondary" aria-pressed="true" onclick="deleteFunction({{cs.id}})"href = "{% url 'customer_view_delete' cs.id %}">Delete</button>
+                            <button type="button" class="btn btn-secondary" aria-pressed="true" herf = " {% url 'customer_view_update' cs.id %} ">Update</button> -->
+                            <a href="{% url 'customer_view_delete' cs.id %}">Delete / </a>
+                            <a href="{% url 'customer_view_update' cs.id %}">Update</a>
                         </div>
                     </td>
                 </tr>
